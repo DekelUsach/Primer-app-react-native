@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
-import { View, Text, Vibration, StyleSheet, Button } from 'react-native';
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  Vibration,
+  StyleSheet,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 
 export default function App() {
   const [variable, setVariable] = useState(0);
-  const [color, setColor] = useState('#fff');
+  const [color, setColor] = useState("#fff");
 
   const cambiarColor = () => {
-    if (color === '#fff') {
-      setColor('#71ff33');
+    if (color === "#fff") {
+      setColor("#71ff33");
     } else {
-      setColor('#fff');
+      setColor("#fff");
     }
   };
 
@@ -27,6 +34,12 @@ export default function App() {
         }}
         title="Toque para agregar"
       />
+
+      <TouchableOpacity style={styles.touchableOpacity}>
+        <Text>Hola</Text>
+      </TouchableOpacity>
+
+      <Button title="no" />
       <Text style={styles.title}>{variable}</Text>
     </View>
   );
@@ -35,13 +48,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontSize: 20,
   },
   btn: {
     marginBottom: 10,
+  },
+  touchableOpacity: {
+    width: 50,
+    height: 50,
+    backgroundColor: "skyblue", // por ejemplo
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5,
+    marginTop: 10,
   },
 });
